@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>for my baby ♡</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000000, #120010, #000000);
+      color: #ffd6eb;
+      font-family: Georgia, serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      color: rgba(255, 182, 193, 0.4);
+      animation: pulse 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #ffb6d9;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 15px;
+      color: #ffe4f2;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+
+    .button {
+      text-decoration: none;
+      color: #ffe4f2;
+      border: 1px solid rgba(255, 182, 193, 0.5);
+      padding: 15px 35px;
+      border-radius: 50px;
+      background: rgba(255, 105, 180, 0.1);
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      background: rgba(255, 105, 180, 0.2);
+    }
+
+    .letters {
+      padding: 100px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .letters-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .letters-title h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .letters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 182, 193, 0.2);
+      border-radius: 30px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    details:hover {
+      background: rgba(255, 105, 180, 0.1);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 1.2rem;
+      color: #ffe4f2;
+    }
+
+    details p {
+      margin-top: 20px;
+      line-height: 2;
+      color: rgba(255, 214, 235, 0.9);
+      font-style: italic;
+    }
+
+    .final-section {
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-card {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 105, 180, 0.1);
+      border: 1px solid rgba(255, 182, 193, 0.2);
+      border-radius: 40px;
+      padding: 50px 30px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 40px rgba(255, 105, 180, 0.15);
+    }
+
+    .final-card h3 {
+      font-size: 3rem;
+      margin: 25px 0;
+      line-height: 1.3;
+    }
+
+    .final-card p {
+      line-height: 2;
+      color: rgba(255, 214, 235, 0.8);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding-bottom: 30px;
+      color: rgba(255, 182, 193, 0.6);
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .letters-title h2,
+      .final-card h3 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <!-- MÚSICA -->
+  <audio id="music" loop>
+    <source src="./music/love-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <p class="quote">
+      “you know that i'd just die to make you proud” - love song
+    </p>
+
+    <h1>
+      feliz cinco meses, meu amor!!!
+    </h1>
+
+    <p class="subtitle">
+      para o meu leãozinho ♡
+    </p>
+
+    <a id="open-heart" href="#letters" class="button">
+      clique aqui e abra meu coração!
+    </a>
+
+  </section>
+
+  <!-- CARTAS -->
+  <section class="letters" id="letters">
+
+    <div class="letters-title">
+      <h2>pedacinhos do meu coração</h2>
+      <p>clique nas letrinhas quando precisar delas ♡</p>
+    </div>
+
+    <div class="letters-grid">
+
+      <details>
+        <summary>abra quando você sentir minha falta</summary>
+        <p> 
+          amor, se um dia você sentir minha falta, não importa o que esteja acontecendo, onde eu esteja ou o que eu esteja fazendo, me liga, me manda mensagem e me chama. 
+          Porque, seja lá onde eu estiver, você sempre vai estar nos meus pensamentos, na minha mente e, principalmente, no meu coração. Em todos os momentos, o que eu mais quero é estar com você.
+          E se o meu bebezinho sentir minha falta, sentir que precisa de mim, eu quero e preciso que você me chame. Eu faria de tudo pra correr até você o mais rápido possível, meu amor. Porque cuidar de você, estar com você e te fazer sentir amado é uma das coisas mais importantes pra mim, meu bebezinho..
+        </p>
+      </details>
+
+      <details>
+        <summary>abra quando você estiver triste</summary>
+        <p>
+          amor, eu sei que existem dias em que sua mente fica cansada, seu coração fica em silêncio e até as coisas que você ama parecem perder um pouco da cor. Mas, por favor, nunca se esqueça de uma coisa: você não está sozinho, e se um dia esteve, nunca mais estará, pois agora eu estou aqui para estar com você até o fim.
+Eu queria MUITO conseguir entrar na sua mente nesses momentos em que você se sente assim, e te mostrar a forma como eu te vejo. 
+Porque, enquanto você enxerga falhas (algo difícil de ocorrer), cansaço ou vazio, eu enxergo o homem mais incrível que já apareceu na minha vida. O meu cavaleiro (lembra). O homem que mudou meus dias, que me acolheu mesmo quando eu era confusa, sensível, insegura e um erro nessa vida. É o menino que me ensinou o que é amar e ser amada de verdade.
+E mesmo que você não perceba, sua existência faz diferença em tudo ao meu redor. Você faz diferença na minha vida, no meu coração, nos meus dias, no meu sorriso e no meu futuro. Você é o lugar onde minha alma descansa.
+Então, quando tudo parecer difícil demais, lembra de mim. Lembra da princesa boba que te ama mais do que consegue explicar e expressar em palavras. Lembra que, independente do que aconteça, eu vou continuar segurando sua mão e escolhendo você, de novo e de novo e de novo, até o meu último suspiro.
+        </p>
+      </details>
+
+      <details>
+        <summary>abra quando se sentir vazio</summary>
+        <p>
+          mesmo nos seus momentos mais vazios,
+          você NUNCA deixará de ser amado por mim.
+        </p>
+      </details>
+
+      <details>
+        <summary>coisas que não digo o suficiente</summary>
+        <p>
+          obrigada, bebê, por tudo que você fez e faz por mim todos os dias, eu sou muito grata à Deus por ter te colocado em minha vida, e mais grata ainda à você por estar e se manter em minha vida. Obrigada por me amar, por estar comigo e por ser a luz mais linda e única de minha vida. Eu te amo, e quero estar com você sempre, sempre e sempre. Obrigada por ser meu gatinho, e por estar comigo todos os dias, meu amor. Eu te amo, e sempre vou amar e estar aqui com você, assim como você está sempre comigo, meu neném!♡
+        </p>
+      </details>
+
+      <details>
+        <summary>para o meu gatinho</summary>
+        <p>
+          não importa o que aconteça e não importa o que passe em sua mente, eu sempre vou estar aqui com você, no que você precisar e necessitar. Eu estou com você agora e sempre, meu bebezinho. Me preocupo e me importo MUITO com você. Você é a minha vidinha toda, meu mundo e meu maior e único amor. Eu estou aqui para estar, cuidar e amar você SEMPRE. Você é quem eu quero cuidar com todo o amor do mundo até o meu último suspiro de vida.
+        </p>
+      </details>
+
+      <details>
+        <summary>abra quando surgir os pensamentos mais obscuros</summary>
+        <p>
+          se um de nós dois tivesse que morrer,
+          eu iria querer morrer primeiro,
+          porque não quero viver sem você.
+        </p>
+      </details>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL -->
+  <section class="final-section">
+
+    <div class="final-card">
+
+      <p style="letter-spacing: 3px; color: #ffb6d9;">
+        para meu bebezinho:
+      </p>
+
+      <h3>
+        todas as canções de amor passaram a ser sobre você.
+      </h3>
+
+      <p>
+        Meu amor, é estranho perceber como, depois que você entrou na minha vida, até as menores coisas passaram a carregar um pedaço somente SEU. Em certos horários do dia, mensagens antigas (e sim, eu confesso que volto a ler mensagens suas que já passaram, pois gosto de sentir o mesmo sentimento que senti quando recebi cada uma delas), músicas que antes não significavam nada, pensamentos aleatórios durante a madrugada, TUDO acaba me levando até você sem que eu perceba.
+
+        E acontece porque você se tornou parte de mim de um jeito tão profundo, que agora o MEU amor tem o seu nome, a sua voz e o formato todinho do seu corpo.
+
+        E eu sei que as coisas têm sido muito difíceis para você ultimamente, bebê. Eu sei que seu corpo anda cansado, que sua mente tem se desgastado muito tentando suportar tudo ao mesmo tempo, e sei que existem dias em que até levantar da cama parece mais difícil do que deveria ser. Mas ainda assim, mesmo nos seus dias mais difíceis, eu continuo e sempre continuarei admirando a força que você tem.
+
+        Porque amar você não acontece só nos momentos leves. Eu amo você nos dias felizes, mas também nos dias silenciosos, cansativos e dolorosos. Amo você quando você abre esse sorriso lindo que você tem, e solta essa risada gostosa que preenche minha alma da forma mais linda possível. Mas também amo você quando você sente vontade de desistir de tudo, quando não há mais força de vontade para continuar seguindo seus dias, quando só há pensamentos negativos entrando e fixando-se em sua mente, eu amo você e quero estar com você, mais do que nunca, principalmente nesses momentos. E eu quero que você nunca se esqueça que não precisa carregar o mundo sozinho, porque agora você pode carregá-lo junto à mim.
+
+        Amor, eu quero ser o lugar onde você pode descansar. Quero ser o abraço que acalma seus pensamentos ruins, a voz que te lembra do quanto você é importante e o coração que vai SEMPRE continuar te escolhendo todos os dias, mesmo quando a vida parecer difícil demais, mesmo quando parecer que não há nada que se possa fazer para mudar, é ali, ao seu lado, que eu quero sempre estar.
+
+        Você mudou minha vida sem perceber. Mudou meus sentimentos, meus planos e até a forma como eu vejo o amor. Pois antes de você, eu não sabia que alguém poderia me fazer sentir tão segura apenas por existir.
+
+        E é por isso que todas as canções de amor passaram a ser sobre você. Porque quando escuto letras falando sobre cuidado, saudade, entrega, futuro e eternidade, é o seu rosto, a sua voz e o seu nome que aparece na minha mente.
+
+        Você é o meu cavaleiro, o meu lar, a minha luz, o meu bebê, meu gatinho, minha vidinha, o meu mundo, e principalmente, o meu amor todinho.
+
+        E se um dia você sentir que está perdido, eu prometo te encontrar. Porque foi isso que nossos corações fizeram desde o começo: encontraram um ao outro no meio do caos.
+
+        Você é amado, Alex Junior, imensamente, profundamente e verdadeiramente.
+
+        E enquanto existir um pouquinho de mim nesse mundo, vai existir alguém te amando com todo o coração.
+      </p>
+
+      <div style="margin-top: 30px; font-size: 2rem; color: #ffb6d9;">
+        ♡ ♡ ♡
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    feito com muito amor por sua sasa.
+  </footer>
+
+  <script>
+
+    // ESTRELAS
+    const starsContainer = document.getElementById('stars');
+
+    for (let i = 0; i < 40; i++) {
+
+      const star = document.createElement('div');
+
+      star.classList.add('star');
+
+      star.innerHTML = '✦';
+
+      star.style.left = Math.random() * 100 + '%';
+
+      star.style.top = Math.random() * 100 + '%';
+
+      star.style.fontSize = Math.random() * 12 + 8 + 'px';
+
+      star.style.animationDuration = Math.random() * 4 + 2 + 's';
+
+      starsContainer.appendChild(star);
+    }
+
+    // MÚSICA
+    const music = document.getElementById("music");
+
+    function startMusic() {
+      music.volume = 0.2;
+      music.play().catch(() => {
+        // se o navegador bloquear, o botão ainda permite segunda tentativa
+      });
+    }
+
+    // tocar música ao clicar no link "clique aqui e abra meu coração!"
+    const openHeart = document.getElementById("open-heart");
+    if (openHeart) {
+      openHeart.addEventListener("click", () => {
+        startMusic();
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>
